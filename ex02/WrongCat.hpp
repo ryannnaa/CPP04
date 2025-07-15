@@ -17,7 +17,6 @@ public:
 
     void setIdea(int index, const std::string& content);
     const std::string& getIdea(int index) const;
-    const std::string& getType() const;
     void makeSound() const;
 };
 
