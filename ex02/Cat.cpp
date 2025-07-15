@@ -47,3 +47,8 @@ void Cat::makeSound() const
 {
     std::cout <<"meow.. meow" << std::endl;
 }
+
+const std::string& Cat::getType() const
+{
+    return (this->type);
+}

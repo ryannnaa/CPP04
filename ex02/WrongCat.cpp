@@ -2,9 +2,8 @@
 #include <iostream>
 
 WrongCat::WrongCat()
-    : WrongAnimal()
+    : WrongAnimal("WrongCat")
 {
-    type = "WrongCat";
     std::cout << "Default WrongCat constructor called" << std::endl;
     brain = new Brain();
 }
@@ -46,5 +45,10 @@ const std::string& WrongCat::getIdea(int index) const
 
 void WrongCat::makeSound() const
 {
-    std::cout <<"meow..? meow?" << std::endl;
+    std::cout <<"meow.. meow" << std::endl;
+}
+
+const std::string& WrongCat::getType() const
+{
+    return (this->type);
 }

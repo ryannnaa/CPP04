@@ -31,10 +31,20 @@ Brain::~Brain()
 
 void Brain::setIdea(int index, const std::string& content)
 {
-    ideas[index] = content; 
+    if (index < 100 && index >= 0)
+        ideas[index] = content;
+    else
+        std::cerr << "Index is out of range, select from 0-99" << std::endl;
 }
 
 const std::string& Brain::getIdea(int index) const
 {
-    return (ideas[index]);
+    if (index < 100 && index >= 0)
+        return (ideas[index]);
+    else
+    {
+        std::cerr << "Index is out of range, select from 0-99" << std::endl;
+        static const std::string empty = "";
+        return empty;
+    }
 }

@@ -6,28 +6,21 @@
 int main()
 {
     {
-        const Animal* meta = new Animal();
-        const WrongAnimal* k = new WrongCat();
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
+        Animal *array[4];
 
-        std::cout << std::endl << "[ Animals? ]" << std::endl;
-        std::cout << meta->getType() << " " << std::endl;
-        std::cout << k->getType() << " " << std::endl;
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
-
-        std::cout << std::endl << "[ Sounds? ]" << std::endl;
-        meta->makeSound();
-        k->makeSound();
-        j->makeSound();
-        i->makeSound(); //will output the cat sound!
-        std::cout << std::endl;
-
-        delete meta;
-        delete k;
-        delete j;
-        delete i;
+        for (int i = 0; i < 4; i++)
+        {
+            if (i <= 1)
+                array[i] = new Cat();
+            else
+                array[i] = new Dog();
+        }
+        for (int i = 0; i < 4; i ++)
+        {
+            array[i]->makeSound();
+        }
+        for (int i = 0; i < 4; i++)
+            delete array[i];
     }
     {
         std::cout << std::endl << "[ Testing deep copy with Cat ]\n";
@@ -46,6 +39,10 @@ int main()
         std::cout << "After changing original:\n";
         std::cout << "Original's idea[0]: " << original.getIdea(0) << std::endl;
         std::cout << "Copy's idea[0]: " << copy.getIdea(0) << std::endl << std::endl;
+
+        std::cout << "[ Testing out of bound index ]\n";
+        std::cout << "Original's idea[-1]: " << original.getIdea(-1) << std::endl;
+        std::cout << "Copy's idea[100]: " << copy.getIdea(100) << std::endl;
     }
     return 0;
 }

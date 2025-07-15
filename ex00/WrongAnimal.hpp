@@ -15,7 +15,7 @@ public:
     virtual ~WrongAnimal();
 
     const std::string& getType() const;
-    void makeSound() const;
+    virtual void makeSound() const;
 };
 
 #endif

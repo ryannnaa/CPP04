@@ -33,8 +33,3 @@ WrongAnimal::~WrongAnimal()
 {
     std::cout << "WrongAnimal destructor called" << std::endl;
 }
-
-const std::string& WrongAnimal::getType() const
-{
-    return (type);
-}
