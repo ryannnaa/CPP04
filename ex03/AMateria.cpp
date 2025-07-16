@@ -37,4 +37,4 @@ AMateria::~AMateria()
 void AMateria::use(ICharacter& target)
 {
     std::cout << "Does something to " << target.getName() << std::endl;
-}
+} 
