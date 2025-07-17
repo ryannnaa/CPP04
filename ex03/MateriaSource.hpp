@@ -1,7 +1,9 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-class	MateriaSource
+#include "IMateriaSource.hpp"
+
+class	MateriaSource : public IMateriaSource
 {
 private:
 	AMateria *memory[4];
@@ -12,7 +14,7 @@ public:
 	~MateriaSource();
 
 	void learnMateria(AMateria *source);
-	MateriaSource& createMateria(std::string const &input);
+	AMateria* createMateria(std::string const &input);
 };
 
 #endif

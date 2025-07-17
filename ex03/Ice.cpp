@@ -1,4 +1,5 @@
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
 Ice::Ice()
@@ -18,8 +19,9 @@ Ice& Ice::operator=(const Ice& other)
     std::cout << "Ice Materia assigned" << std::endl;
     if (this != &other)
     {
-        this->element = other.getType();
+        this->type = other.getType();
     }
+    return (*this);
 }
 
 Ice::~Ice()
