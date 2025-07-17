@@ -25,7 +25,7 @@ MateriaSource::MateriaSource(const MateriaSource& other)
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->memory[i])
-			this->memory[i] = other.memory[i];
+			this->memory[i] = other.memory[i]->clone();
 		else
 			this->memory[i] = NULL;
 	}
@@ -42,10 +42,10 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 			if (this->memory[i])
 			{
 				delete this->memory[i];
-				this->memory[i] = other.memory[i];
+				this->memory[i] = other.memory[i]->clone();
 			}
 			else
-				this->memory[i] = other.memory[i];
+				this->memory[i] = other.memory[i]->clone();
 		}
 	}
 	return (*this);
