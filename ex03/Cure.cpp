@@ -4,19 +4,14 @@
 
 Cure::Cure()
     : AMateria("cure")
-{
-    std::cout << "Cure Materia constructed" << std::endl;
-}
+{}
 
 Cure::Cure(const Cure& other)
     : AMateria(other.getType())
-{
-    std::cout << "Cure Materia copied" << std::endl;
-}
+{}
 
 Cure& Cure::operator=(const Cure& other)
 {
-    std::cout << "Cure Materia assigned" << std::endl;
     if (this != &other)
     {
         this->type = other.getType();
@@ -25,9 +20,7 @@ Cure& Cure::operator=(const Cure& other)
 }
 
 Cure::~Cure()
-{
-    std::cout << "Cure Materia destroyed" << std::endl;
-}
+{}
 
 Cure* Cure::clone() const
 {

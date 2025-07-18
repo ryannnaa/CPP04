@@ -4,7 +4,6 @@
 Character::Character()
 	: name("Default")
 {
-    std::cout << "Default Character created" << std::endl;
     for (int i = 0; i < 4; i++)
         this->inventory[i] = NULL;
 }
@@ -12,7 +11,6 @@ Character::Character()
 Character::Character(const std::string& input)
 	: name(input)
 {
-    std::cout << "Character created" << std::endl;
     for (int i = 0; i < 4; i++)
         this->inventory[i] = NULL;
 }
@@ -20,7 +18,6 @@ Character::Character(const std::string& input)
 Character::Character(const Character& other)
 	: name(other.name)
 {
-    std::cout << "Creating copy of " << other.getName() << std::endl;
    for (int i = 0; i < 4; i++)
    {
 	  if (other.inventory[i])
@@ -32,7 +29,6 @@ Character::Character(const Character& other)
 
 Character& Character::operator=(const Character& other)
 {
-    std::cout << "Assigning copy of " << other.getName() << std::endl;
     if (this != &other)
     {
 	for (int i = 0; i < 4; i++)
@@ -54,7 +50,6 @@ Character& Character::operator=(const Character& other)
 
 Character::~Character()
 {
-	std::cout << "Character destroyed" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->inventory[i])
@@ -76,6 +71,7 @@ void Character::equip(AMateria *m)
 	{
 		if (inventory[i] == NULL)
 		{
+			std::cout << "Materia equipped" << std::endl;
 			inventory[i] = m;
 			break;
 		}

@@ -4,16 +4,12 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource constructed" << std::endl;
-
 	for (int i = 0; i < 4; i++)
 		this->memory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other)
 {
-	std::cout << "Copy of MateriaSource created" << std::endl;
-	
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->memory[i])
@@ -33,8 +29,6 @@ MateriaSource::MateriaSource(const MateriaSource& other)
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 {
-	std::cout << "MateriaSource assigned" << std::endl;
-
 	if (this != &other)
 	{
 		for (int i = 0; i < 4; i++)
@@ -53,8 +47,6 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "MateriaSource destroyed" << std::endl;
-
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->memory[i])
@@ -67,8 +59,6 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria *source)
 {
-	std::cout << "Learning Materia" << std::endl;
-	
 	if (source)
 	{
 		for (int i = 0; i < 4; i++)
@@ -76,6 +66,7 @@ void MateriaSource::learnMateria(AMateria *source)
 			if (this->memory[i] == NULL)
 			{
 				this->memory[i] = source->clone();
+				std::cout << "Learning Materia" << std::endl;
 				break;
 			}
 		}

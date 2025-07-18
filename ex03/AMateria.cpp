@@ -4,25 +4,19 @@
 
 AMateria::AMateria()
     : type("Default")
-{
-    std::cout << "Default Materia constructed" << std::endl;
-}
+{}
 
 AMateria::AMateria(std::string const & type)
     : type(type)
-{
-    std::cout << type << " Materia constructed" << std::endl;
-}
+{}
 
 AMateria::AMateria(const AMateria& other)
 {
-    std::cout << "Materia copied" << std::endl;
     type = other.getType();
 }
 
 AMateria& AMateria::operator=(const AMateria& other)
 {
-    std::cout << "Materia assigned" << std::endl;
     if (this != &other)
     {
         type = other.getType();
@@ -31,9 +25,7 @@ AMateria& AMateria::operator=(const AMateria& other)
 }
 
 AMateria::~AMateria()
-{
-    std::cout << "Materia destroyed" << std::endl;
-}
+{}
 
 std::string const & AMateria::getType() const
 {

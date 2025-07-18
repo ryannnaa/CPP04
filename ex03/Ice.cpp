@@ -4,19 +4,14 @@
 
 Ice::Ice()
     : AMateria("ice")
-{
-    std::cout << "Ice Materia constructed" << std::endl;
-}
+{}
 
 Ice::Ice(const Ice& other)
     : AMateria(other.getType())
-{
-    std::cout << "Ice Materia copied" << std::endl;
-}
+{}
 
 Ice& Ice::operator=(const Ice& other)
 {
-    std::cout << "Ice Materia assigned" << std::endl;
     if (this != &other)
     {
         this->type = other.getType();
@@ -25,9 +20,7 @@ Ice& Ice::operator=(const Ice& other)
 }
 
 Ice::~Ice()
-{
-    std::cout << "Ice Materia destroyed" << std::endl;
-}
+{}
 
 Ice* Ice::clone() const
 {
